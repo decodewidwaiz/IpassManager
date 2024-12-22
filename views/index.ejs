@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InoteBook</title>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+    <nav class="flex justify-between items-center px-16 py-6 " >
+      <h1 class="text-zinc-50 text-xl font-['Poppins'] font-bold underline-offset-8 underline decoration-blue-500" >IpassManager</h1>
+      <a href="https://github.com/medecodewidwaiz"><button class="bg-green-600 px-4 py-1  rounded-full border-2 border-white text-white" >Github</button></a>
+    </nav>
+        
+<div class="content w-full py-8 flex justify-center items-center flex-col ">
+      <h1 class="text-zinc-50 text-5xl font-['Poppins'] font-bold " >IpassManager</h1>
+      <p class="text-zinc-400 text-lg font-['Oswald'] text-center pt-6" >The password-managing app is a simple, yet powerful tool for storing, organizing, and managing<br>
+        your links, usernames or emails, and passwords.</p>
+
+
+
+
+      <form action="/create" method="post"  class="flex flex-col justify-center text-white pt-10">
+        <!-- action="/create" method="post" -->
+        <p>Enter your usernames</p>
+        <input name="username" type="text" name="title" id=" " placeholder="Write your username" class="p-4 w-96 rounded-md bg-zinc-600 outline-none text-white">
+
+        <!-- name = username -->
+        <p class="mt-2" >Enter your password</p>
+        <input name="password" type="password" name="title" id=" " placeholder="Write your passwords" class="p-4 w-96 rounded-md bg-zinc-600 outline-none text-white ">
+        <!-- name = password -->
+
+        <button class="p-2 w-96 rounded-md bg-green-600 text-white mt-2 hover:bg-green-500" >Submit</button>
+      </form>
+
+
+
+
+
+      <div class="details p-10 flex justify-center gap-3 flex-wrap ">
+
+<!-- 
+      agar files me ek bhi file hoga to for each loop ke through access krenge otherwise "no saved passwords yet. " show krwa denge        -->
+      <% if (files.length > 0) { %>
+        <% files.forEach(function(val) { %>
+          <div class="password w-48 px-3 py-4 bg-blue-600 rounded-md bg-zinc-900 text-white">
+            <!-- Dynamically display title from frontend -->
+            <h1 class="text-2xl tracking-tighter">
+              <% if (val.length > 10) { %>
+                <%= val.substring(0, 10) + '...' %>
+              <% } else { %>
+                <%= val %>
+              <% } %>
+            </h1>
+            <a class="text-blue-500">Show password</a>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <h2 class="text-zinc-50">No saved passwords yet.</h2>
+      <% } %>
+      
+
+
+      </div>
+
+  </div>
+  
+</div>
+  
+</body>
+</html>
